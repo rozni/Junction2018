@@ -1,0 +1,18 @@
+* Intro
+  This is a best attempt on a one-person hack in Junction 2018.
+  The goal was to provide a new way how to get threat/security intel.
+
+* How does it work? (How is is supposed to?)
+  There is a pool of online sources where to look for information for a query
+  (currently only Google Search and Google News, scrapers for CVE databases
+  social media and fora are/were intended.
+
+  The backend visits links provided to it and tries to extract their plain text.
+  The text is then analyzed for entities such as names of software, protocols,
+  organisations and other parties.
+
+  Results are then correlated, trimmed and displayed.
+
+* Installation
+  Cloning the repo, installing requirements and running Django (=python manage.py runserver=).
+  Interfaces can be then visited on [[localhost:8000/v1]] and [[localhost:8000/v2]].

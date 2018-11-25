@@ -1,0 +1,24 @@
+{% extends 'front_end/base.html' %}
+
+{% block content %}
+{% if queried %}
+<div class="container">
+    <p>Results for <strong>{{ query }}</strong></p>
+</div>
+<div class="container">
+
+    <ul class="list-group">
+        {% for url, tags in results.items %}
+        <li class="list-group-item">
+            <a href="{{ url }}" >{{ url }}</a>
+
+            {% for tag in tags %}
+            <span class="badge">{{ tag }}</span>
+            {% endfor %}
+
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+{% endblock %}

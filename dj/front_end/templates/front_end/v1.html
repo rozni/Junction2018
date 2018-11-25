@@ -1,0 +1,36 @@
+{% extends 'front_end/base.html' %}
+
+{% block content %}
+{% if queried %}
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Results for <strong>{{ query }}</strong>
+        </div>
+        <div class="panel-body">
+
+            {% for result in results %}
+            <div class="container">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapse{{ forloop.counter }}">{{ result.name }}</a>
+                            </h4>
+                        </div>
+                        <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse">
+                            {% for url in result.urls %}
+                            <div class="panel-body">
+                                <a href="{{ url }}">{{ url }}</a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
