@@ -13,8 +13,8 @@ class Source:
 
 class GoogleSearch(Source):
     def __iter__(self):
-        return GS.search(self.query, pause=0.05)
+        return (url for url in GS.search(self.query, pause=0.5) if not url.endswith('pdf'))
 
 class GoogleNews(Source):
     def __iter__(self):
-        return GS.search_news(self.query, pause=0.05)
+        return (url for url in GS.search_news(self.query, pause=0.5) if not url.endswith('pdf'))
