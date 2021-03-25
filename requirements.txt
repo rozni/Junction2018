@@ -39,7 +39,7 @@ ptyprocess==0.6.0
 Pygments==2.2.0
 pylint==2.1.1
 pytz==2018.7
-PyYAML==3.13
+PyYAML==5.4
 regex==2018.1.10
 requests==2.20.1
 selenium==2.53.6
